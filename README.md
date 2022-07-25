@@ -10,8 +10,11 @@
 
 ### 2. Запустить Backend
 1. Скачать [.zip backend](https://github.com//SherzodAli/restman_web_menu/archive/refs/heads/main.zip) и разархивировать
-2. Скачать зависимости backend `cd "$PATH_TO_BACKEND_FOLDER" && npm install`   
+2. Скачать зависимости backend   
 `$PATH_TO_BACKEND_FOLDER` - путь к папке backend
+```shell
+cd "$PATH_TO_BACKEND_FOLDER" && npm install
+```
 3. Указать информацию о БД в config.js (user, password)
 4. Запустить backend `npm run serve --prefix "$PATH_TO_BACKEND_FOLDER"`
 

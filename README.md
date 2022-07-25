@@ -56,7 +56,7 @@
 `$PATH_TO_BACKEND_FOLDER` - путь к папке backend  
 
     ```shell
-    npm run serve --prefix "**$PATH_TO_BACKEND_FOLDER**"
+    npm run serve --prefix "$PATH_TO_BACKEND_FOLDER"
     ```
 * Запуск frontend-меню  
 `$SERVER_IP` - IP сервера  

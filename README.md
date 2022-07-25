@@ -3,28 +3,17 @@
 
 ### 1. Установка зависимостей
 * Установить Node.js (.exe)
-* Проверить наличие Node.js и npm (должен выдать номер версии)
-```shell
-node -v && npm -v
-```
-* Установить глобально http-server
-```shell
-npm install -g http-server
-```
+* Проверить наличие Node.js и npm (должен выдать номер версии) `node -v && npm -v`
+* Установить глобально http-server `npm install -g http-server`
+
 
 
 ### 2. Запустить Backend
 [Backend Код](https://github.com/SherzodAli/restman_web_menu_api)
 * Скачать .zip backend-меню и разархивировать
-* Скачать зависимости backend-меню
-```shell
-cd $PATH_TO_BACKEND_FOLDER && npm install
-```
+* Скачать зависимости backend `cd $PATH_TO_BACKEND_FOLDER && npm install`
 * Указать информацию о БД в config.js (user, password)
-* Запустить backend-меню
-```shell
-npm run serve --prefix "$PATH_TO_BACKEND_FOLDER"
-```
+* Запустить backend `npm run serve --prefix "$PATH_TO_BACKEND_FOLDER"`
 
 
 ### 3. Запустить Frontend

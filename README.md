@@ -2,7 +2,7 @@
 
 
 ### 1. Установка зависимостей
-* Установить Node.js. Для [win 8|10|11](https://nodejs.org/dist/v16.16.0/node-v16.16.0-x64.msi) | для [win 7](https://nodejs.org/dist/v13.14.0/node-v13.14.0-x64.msi)
+* Установить Node.js. Для [win 8, 10, 11](https://nodejs.org/dist/v16.16.0/node-v16.16.0-x64.msi) | для [win 7](https://nodejs.org/dist/v13.14.0/node-v13.14.0-x64.msi)
 * Проверить наличие Node.js и npm (должен выдать номер версии) `node -v && npm -v`
 * Установить глобально http-server `npm install -g http-server`
 

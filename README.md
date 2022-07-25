@@ -26,13 +26,13 @@ cd "$PATH_TO_BACKEND_FOLDER" && npm install
 cd "$PATH_TO_FRONTEND_FOLDER" && npm install
 ```
 3. Запустить frontend  
-`$SERVER_IP` - IP сервера  
-`$PATH_TO_FRONTEND_FOLDER` - путь к папке с frontend
+<small>`$SERVER_IP` - IP сервера  
+`$PATH_TO_FRONTEND_FOLDER` - путь к папке с frontend</small>
 ```shell
 set REACT_APP_SERVER_IP=$SERVER_IP && set REACT_APP_SERVER_API_PORT=8000 && set REACT_APP_SERVER_IMAGES_PORT=8080 && npm start --prefix "$PATH_TO_FRONTEND_FOLDER"
 ```
 4. Запустить http-server для доступа к картинкам  
-`$PATH_TO_IMAGE_FOLDER` - путь к папке с фотографиями
+<small>`$PATH_TO_IMAGE_FOLDER` - путь к папке с фотографиями</small>
 ```shell
 http-server "$PATH_TO_IMAGE_FOLDER"
 ```

@@ -28,6 +28,7 @@
 1. Скачать [.zip frontend](https://github.com//SherzodAli/restman_web_menu/archive/refs/heads/main.zip) и разархивировать
 2. Скачать зависимости frontend  
 `$PATH_TO_FRONTEND_FOLDER` - путь к папке с frontend  
+
     ```shell
     cd "$PATH_TO_FRONTEND_FOLDER" && npm install
     ```

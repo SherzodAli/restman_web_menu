@@ -1,11 +1,11 @@
 import * as React from 'react'
+import {useState} from 'react'
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
-import {arrayBufferToBase64} from '../../utils/img'
 import './DishItem.sass'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -13,13 +13,13 @@ import IconButton from '@mui/material/IconButton'
 import Collapse from '@mui/material/Collapse'
 import {styled} from '@mui/material/styles'
 
-import SwiperCore, {Scrollbar, Pagination, Navigation} from 'swiper/core'
+import SwiperCore, {Navigation, Pagination, Scrollbar} from 'swiper/core'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
-import {useState} from 'react'
+import {IMAGE_API_URL} from '../../App'
 
 SwiperCore.use([Scrollbar, Pagination, Navigation])
 
@@ -42,13 +42,13 @@ const ExpandMore = styled(props => {
 }))
 
 export default function DishItem({
-    dishId,
-    dishName,
-    dishPhotoList,
-    dishPrice,
-    dishDescription,
-    dishIngredients
-}) {
+                                     dishId,
+                                     dishName,
+                                     dishPhotoList,
+                                     dishPrice,
+                                     dishDescription,
+                                     dishIngredients
+                                 }) {
     const [expanded, setExpanded] = useState(false)
     let hasPhoto = !isEmptyList(dishPhotoList)
     let hasMultiplePhoto = hasPhoto && getListTrueLength(dishPhotoList) > 1
@@ -65,19 +65,21 @@ export default function DishItem({
                 navigation={hasMultiplePhoto}
                 loop={hasMultiplePhoto}
                 className='swiperContainer'>
-                {!hasPhoto ? (
+                {hasPhoto ? (
                     dishPhotoList.map(
-                        (image, index) =>
-                            image && (
+                        (image, index) => {
+                            let img = image.split('\\').at(-1)
+                            return  (
                                 <SwiperSlide key={index}>
                                     <CardMedia
-                                        // image={require('D:\\Projects\\commercial\\ferrosoft\\Restman\\manti.jpg')}
+                                        image={`${IMAGE_API_URL}/${img}`}
                                         component='img'
                                         height='194'
                                         alt='Картинка'
                                     />
                                 </SwiperSlide>
                             )
+                        }
                     )
                 ) : (
                     <SwiperSlide key={dishId}>

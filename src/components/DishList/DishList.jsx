@@ -9,13 +9,14 @@ import {useEffect, useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import KeyboardBackspaceOutlinedIcon from '@mui/icons-material/KeyboardBackspaceOutlined'
 import clsDish from './DishList.module.sass'
+import {API_URL} from '../../App'
 
 export default function DishList() {
     const navigate = useNavigate()
     const params = useParams()
     const [menuInfo, isLoading] = useLoad(
         {
-            url: 'http://192.168.0.103:8000/dishes',
+            url: `${API_URL}/dishes`,
             params: {partOfMenu: params?.dishId},
             reloadParam: params?.dishId
         },

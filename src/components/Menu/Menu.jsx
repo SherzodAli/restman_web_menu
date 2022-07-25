@@ -3,9 +3,11 @@ import Loader from '../Loader/Loader'
 import GroupItem from '../GroupItem/GroupItem'
 import cls from './Menu.module.sass'
 import Container from '@mui/material/Container'
+import {API_URL} from '../../App'
+
 
 export default function Menu() {
-    const [menuGroups, isLoading] = useLoad({url: 'http://192.168.0.103:8000/'}, [])
+    const [menuGroups, isLoading] = useLoad({url: `${API_URL}/`}, [])
 
     if (isLoading) {
         return <Loader />

@@ -62,6 +62,6 @@
 `$SERVER_IP` - IP сервера  
 `$PATH_TO_FRONTEND_FOLDER` - путь к папке с frontend  
 
-    ```shell
-    set REACT_APP_SERVER_IP=$SERVER_IP && set REACT_APP_SERVER_API_PORT=8000 && set REACT_APP_SERVER_IMAGES_PORT=8080 && npm start --prefix "$PATH_TO_FRONTEND_FOLDER"
-    ```
+    <pre>
+  set REACT_APP_SERVER_IP=<mark>$SERVER_IP</mark> && set REACT_APP_SERVER_API_PORT=8000 && set REACT_APP_SERVER_IMAGES_PORT=8080 && npm start --prefix "<mark>$PATH_TO_FRONTEND_FOLDER</mark>"
+    </pre>

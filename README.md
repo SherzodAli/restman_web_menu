@@ -45,16 +45,23 @@
     ```
 
 
-### 4. Повторный запуск Веб-меню через C#
-* Запуск http-server для картинок
+### Повторный запуск Веб-меню через C#
+* Запуск http-server для картинок  
+`$PATH_TO_IMAGE_FOLDER` - путь к папке с фотографиями  
+
     ```shell
     http-server "$PATH_TO_IMAGE_FOLDER"
     ```
-* Запуск backend-меню
+* Запуск backend-меню  
+`$PATH_TO_BACKEND_FOLDER` - путь к папке backend  
+
     ```shell
     npm run serve --prefix "$PATH_TO_BACKEND_FOLDER"
     ```
-* Запуск frontend-меню
+* Запуск frontend-меню  
+`$SERVER_IP` - IP сервера  
+`$PATH_TO_FRONTEND_FOLDER` - путь к папке с frontend  
+
     ```shell
     set REACT_APP_SERVER_IP=$SERVER_IP && set REACT_APP_SERVER_API_PORT=8000 && set REACT_APP_SERVER_IMAGES_PORT=8080 && npm start --prefix "$PATH_TO_FRONTEND_FOLDER"
     ```

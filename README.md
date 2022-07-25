@@ -17,39 +17,43 @@
     cd "$PATH_TO_BACKEND_FOLDER" && npm install
     ```
 3. Указать информацию о БД в config.js (user, password)
-4. Запустить backend `npm run serve --prefix "$PATH_TO_BACKEND_FOLDER"`
+4. Запустить backend  
+`$PATH_TO_BACKEND_FOLDER` - путь к папке backend  
+   ```shell
+   npm run serve --prefix "$PATH_TO_BACKEND_FOLDER"
+   ```
 
 
 ### 3. Запустить Frontend
 1. Скачать [.zip frontend](https://github.com//SherzodAli/restman_web_menu/archive/refs/heads/main.zip) и разархивировать
 2. Скачать зависимости frontend-меню  
 `$PATH_TO_FRONTEND_FOLDER` - путь к папке с frontend 
-```shell
-cd "$PATH_TO_FRONTEND_FOLDER" && npm install
-```
+    ```shell
+    cd "$PATH_TO_FRONTEND_FOLDER" && npm install
+    ```
 3. Запустить frontend  
 `$SERVER_IP` - IP сервера  
 `$PATH_TO_FRONTEND_FOLDER` - путь к папке с frontend
-```shell
-set REACT_APP_SERVER_IP=$SERVER_IP && set REACT_APP_SERVER_API_PORT=8000 && set REACT_APP_SERVER_IMAGES_PORT=8080 && npm start --prefix "$PATH_TO_FRONTEND_FOLDER"
-```
+    ```shell
+    set REACT_APP_SERVER_IP=$SERVER_IP && set REACT_APP_SERVER_API_PORT=8000 && set REACT_APP_SERVER_IMAGES_PORT=8080 && npm start --prefix "$PATH_TO_FRONTEND_FOLDER"
+    ```
 4. Запустить http-server для доступа к картинкам  
 `$PATH_TO_IMAGE_FOLDER` - путь к папке с фотографиями
-```shell
-http-server "$PATH_TO_IMAGE_FOLDER"
-```
+    ```shell
+    http-server "$PATH_TO_IMAGE_FOLDER"
+    ```
 
 
 ### 4. Повторный запуск Веб-меню через C#
 * Запуск http-server для картинок
-```shell
-http-server "$PATH_TO_IMAGE_FOLDER"
-```
+    ```shell
+    http-server "$PATH_TO_IMAGE_FOLDER"
+    ```
 * Запуск backend-меню
-```shell
-npm run serve --prefix "$PATH_TO_BACKEND_FOLDER"
-```
+    ```shell
+    npm run serve --prefix "$PATH_TO_BACKEND_FOLDER"
+    ```
 * Запуск frontend-меню
-```shell
-set REACT_APP_SERVER_IP=$SERVER_IP && set REACT_APP_SERVER_API_PORT=8000 && set REACT_APP_SERVER_IMAGES_PORT=8080 && npm start --prefix "$PATH_TO_FRONTEND_FOLDER"
-```
+    ```shell
+    set REACT_APP_SERVER_IP=$SERVER_IP && set REACT_APP_SERVER_API_PORT=8000 && set REACT_APP_SERVER_IMAGES_PORT=8080 && npm start --prefix "$PATH_TO_FRONTEND_FOLDER"
+    ```

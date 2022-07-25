@@ -10,10 +10,13 @@
 
 ### 2. Запустить Backend
 [Backend Код](https://github.com/SherzodAli/restman_web_menu_api)
-* Скачать .zip backend и разархивировать
-* Скачать зависимости backend ($PATH_TO_BACKEND_FOLDER - путь к папке backend) `cd "$PATH_TO_BACKEND_FOLDER" && npm install`
-* Указать информацию о БД в config.js (user, password)
-* Запустить backend `npm run serve --prefix "$PATH_TO_BACKEND_FOLDER"`
+1. Скачать .zip backend и разархивировать
+2. Скачать зависимости backend ($PATH_TO_BACKEND_FOLDER - путь к папке backend)
+```shell
+cd "$PATH_TO_BACKEND_FOLDER" && npm install
+```
+3. Указать информацию о БД в config.js (user, password)
+4. Запустить backend `npm run serve --prefix "$PATH_TO_BACKEND_FOLDER"`
 
 
 ### 3. Запустить Frontend

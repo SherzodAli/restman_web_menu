@@ -8,9 +8,8 @@
 
 
 
-### 2. Запустить Backend
-[Backend Код](https://github.com/SherzodAli/restman_web_menu_api)
-1. Скачать .zip backend и разархивировать
+### 2. Запустить [Backend](https://github.com/SherzodAli/restman_web_menu_api)
+1. Скачать [.zip backend](https://github.com/SherzodAli/restman_web_menu_api) и разархивировать
 2. Скачать зависимости backend ($PATH_TO_BACKEND_FOLDER - путь к папке backend)
 ```shell
 cd "$PATH_TO_BACKEND_FOLDER" && npm install
@@ -19,13 +18,13 @@ cd "$PATH_TO_BACKEND_FOLDER" && npm install
 4. Запустить backend `npm run serve --prefix "$PATH_TO_BACKEND_FOLDER"`
 
 
-### 3. Запустить Frontend
-[Frontend Код](https://github.com/SherzodAli/restman_web_menu)
+### 3. Запустить [Frontend](https://github.com/SherzodAli/restman_web_menu)
+[Frontend Код]()
 * Запустить http-server для доступа к картинкам
 ```shell
 http-server "$PATH_TO_IMAGE_FOLDER"
 ```
-* Скачать .zip frontend-меню и разархивировать
+* Скачать [.zip frontend](https://github.com/SherzodAli/restman_web_menu) и разархивировать
 * Скачать зависимости frontend-меню
 ```shell
 cd $PATH_TO_FRONTEND_FOLDER && npm install

@@ -16,7 +16,7 @@
     ```shell
     cd "$PATH_TO_BACKEND_FOLDER" && npm install
     ```
-3. Указать информацию о БД в config.js (user, password)
+3. Указать информацию о БД в `config.js` (user, password)
 4. Запустить backend  
 `$PATH_TO_BACKEND_FOLDER` - путь к папке backend  
    ```shell

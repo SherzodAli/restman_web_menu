@@ -9,7 +9,7 @@
 
 
 ### 2. Запустить Backend
-1. Скачать [.zip backend](https://github.com//SherzodAli/restman_web_menu/archive/refs/heads/main.zip) и разархивировать
+1. Скачать [.zip backend](https://github.com//SherzodAli/restman_web_menu_api/archive/refs/heads/main.zip) и разархивировать
 2. Скачать зависимости backend   
 `$PATH_TO_BACKEND_FOLDER` - путь к папке backend  
 

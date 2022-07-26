@@ -14,7 +14,7 @@
 `$PATH_TO_BACKEND_FOLDER` - путь к папке backend  
 
     ```shell
-    cd "$PATH_TO_BACKEND_FOLDER" && npm install
+    cd "$PATH_TO_BACKEND_FOLDER" && npm install --force
     ```
 3. Указать информацию о БД в `config.js` (user, password)
 4. Запустить backend  
@@ -30,7 +30,7 @@
 `$PATH_TO_FRONTEND_FOLDER` - путь к папке с frontend  
 
     ```shell
-    cd "$PATH_TO_FRONTEND_FOLDER" && npm install
+    cd "$PATH_TO_FRONTEND_FOLDER" && npm install --force
     ```
 3. Запустить frontend  
 `$SERVER_IP` - IP сервера  

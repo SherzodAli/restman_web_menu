@@ -42,13 +42,13 @@ const ExpandMore = styled(props => {
 }))
 
 export default function DishItem({
-                                     dishId,
-                                     dishName,
-                                     dishPhotoList,
-                                     dishPrice,
-                                     dishDescription,
-                                     dishIngredients
-                                 }) {
+    dishId,
+    dishName,
+    dishPhotoList,
+    dishPrice,
+    dishDescription,
+    dishIngredients
+}) {
     const [expanded, setExpanded] = useState(false)
     let hasPhoto = !isEmptyList(dishPhotoList)
     let hasMultiplePhoto = hasPhoto && getListTrueLength(dishPhotoList) > 1
@@ -66,21 +66,20 @@ export default function DishItem({
                 loop={hasMultiplePhoto}
                 className='swiperContainer'>
                 {hasPhoto ? (
-                    dishPhotoList.map(
-                        (image, index) => {
-                            let img = image.split('\\').at(-1)
-                            return  (
-                                <SwiperSlide key={index}>
-                                    <CardMedia
-                                        image={`${IMAGE_API_URL}/${img}`}
-                                        component='img'
-                                        height='194'
-                                        alt='Картинка'
-                                    />
-                                </SwiperSlide>
-                            )
-                        }
-                    )
+                    dishPhotoList.map((image, index) => {
+                        let img = image.split('\\').at(-1)
+                        return (
+                            <SwiperSlide key={index}>
+                                <CardMedia
+                                    image={`${IMAGE_API_URL}/${img}`}
+                                    component='img'
+                                    height='194'
+                                    alt='Картинка'
+                                    style={{objectFit: 'contain', backgroundColor: '#ECECEC'}}
+                                />
+                            </SwiperSlide>
+                        )
+                    })
                 ) : (
                     <SwiperSlide key={dishId}>
                         <CardMedia

@@ -75,7 +75,7 @@ export default function DishItem({
                                     component='img'
                                     height='194'
                                     alt='Картинка'
-                                    // style={{objectFit: 'contain', backgroundColor: '#ECECEC'}}
+                                    style={{objectFit: 'contain', backgroundColor: '#ECECEC'}}
                                 />
                             </SwiperSlide>
                         )

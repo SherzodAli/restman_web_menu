@@ -9,6 +9,8 @@ import {API_URL} from '../../App'
 export default function Menu() {
     const [menuGroups, isLoading] = useLoad({url: `${API_URL}/`}, [])
 
+    console.log(menuGroups)
+
     if (isLoading) {
         return <Loader />
     }

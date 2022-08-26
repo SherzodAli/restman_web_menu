@@ -10,8 +10,8 @@ export default function GroupItem({dishId, dishName, onClick}) {
         <Card key={dishId} className={cls.groupItemWrapper}>
             <Link to={`/dish/${dishId}`} className={cls.link} onClick={() => onClick()}>
                 <CardContent>
-                    <Typography variant='p' component='div'>
-                        [{dishName}]
+                    <Typography variant='p' component='div' color={'#000'}>
+                        {dishName}
                     </Typography>
                 </CardContent>
             </Link>

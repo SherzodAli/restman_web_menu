@@ -58,7 +58,7 @@ export default function DishItem({
     }
 
     return (
-        <Card key={dishId} sx={{minWidth: '80%', maxWidth: '80%'}} style={{marginBottom: 30}}>
+        <Card key={dishId} sx={{minWidth: '80%', maxWidth: '80%', backgroundColor: 'hsl(348, 100%, 61%)'}} style={{marginBottom: 30}}>
             <Swiper
                 grabCursor
                 pagination={{clickable: true}}
@@ -93,12 +93,12 @@ export default function DishItem({
             </Swiper>
 
             <CardContent>
-                <Typography gutterBottom variant='h5' component='div'>
+                <Typography gutterBottom variant='h5' component='div' color={'hsl(48, 100%, 67%)'}>
                     {dishName}
                 </Typography>
             </CardContent>
             <CardActions style={{display: 'flex', justifyContent: 'space-between'}}>
-                <Button style={{fontSize: 18}} size='small'>
+                <Button style={{fontWeight: 'bold', fontSize: 36, color: 'hsl(48, 100%, 67%)'}} size='small'>
                     {numberWithCommas(dishPrice)}
                 </Button>
                 {dishIngredients && dishDescription && (
@@ -106,18 +106,21 @@ export default function DishItem({
                         expand={expanded}
                         onClick={handleExpandClick}
                         aria-expanded={expanded}
-                        aria-label='show more'>
-                        <ExpandMoreIcon />
+                        aria-label='show more'
+                    >
+                        <ExpandMoreIcon style={{color: 'hsl(48, 100%, 67%)', fontSize: 38}} />
                     </ExpandMore>
                 )}
             </CardActions>
             <Collapse in={expanded} timeout='auto' unmountOnExit>
                 <CardContent>
-                    <Typography paragraph>{dishDescription}</Typography>
+                    <Typography paragraph color={'hsl(48, 100%, 67%)'}>{dishDescription}</Typography>
                     <Typography paragraph>
+                        <span style={{color: 'hsl(48, 100%, 67%)', fontWeight: 'bold'}}>Состав: </span>
                         {dishIngredients?.map((ingredient, idx) => (
-                            <span key={idx} className={'ingredient'}>
+                            <span key={idx} className={'ingredient-simple'}>
                                 {ingredient}
+                                {dishIngredients.length - 1 === idx ? '' : ', '}
                             </span>
                         ))}
                     </Typography>

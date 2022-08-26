@@ -1,15 +1,18 @@
-import {useParams} from 'react-router-dom'
+import {useEffect, useState} from 'react'
+
+import {useNavigate, useParams} from 'react-router-dom'
+import Container from '@mui/material/Container'
+import KeyboardBackspaceOutlinedIcon from '@mui/icons-material/KeyboardBackspaceOutlined'
+
+import {API_URL} from '../../App'
 import {useLoad} from '../../hooks/useLoad'
 import Loader from '../Loader/Loader'
 import DishItem from '../DishItem/DishItem'
 import GroupItem from '../GroupItem/GroupItem'
-import Container from '@mui/material/Container'
 import cls from '../Menu/Menu.module.sass'
-import {useEffect, useState} from 'react'
-import {useNavigate} from 'react-router-dom'
-import KeyboardBackspaceOutlinedIcon from '@mui/icons-material/KeyboardBackspaceOutlined'
 import clsDish from './DishList.module.sass'
-import {API_URL} from '../../App'
+import Background from '../Background/Background'
+
 
 export default function DishList() {
     const navigate = useNavigate()
@@ -50,8 +53,10 @@ export default function DishList() {
 
     return (
         <Container>
-            <h2 className={clsDish.title}>
+            <Background image={'/moroccan-flower.png'} />
+            <h2 className={clsDish.title} style={{color: 'hsl(348, 100%, 61%)'}}>
                 <KeyboardBackspaceOutlinedIcon
+                    style={{fontSize: 40}}
                     onClick={back}
                     className={clsDish.backArrow}></KeyboardBackspaceOutlinedIcon>
                 {groupName}

@@ -12,6 +12,7 @@ import GroupItem from '../GroupItem/GroupItem'
 import cls from '../Menu/Menu.module.sass'
 import clsDish from './DishList.module.sass'
 import Background from '../Background/Background'
+import BG_IMAGE_DEFAULT from '../../static/bg.png'
 
 
 export default function DishList() {
@@ -25,6 +26,7 @@ export default function DishList() {
         },
         {}
     )
+    const [bgImage, isLoadingBg] = useLoad({url: `${API_URL}/bg`}, {})
 
     const [loadingNew, setLoadingNew] = useState(false)
     const [folders, setFolders] = useState([])
@@ -40,7 +42,7 @@ export default function DishList() {
         }
     }, [menuInfo])
 
-    if (isLoading || loadingNew) {
+    if (isLoading || loadingNew || isLoadingBg) {
         return <Loader />
     }
 
@@ -51,10 +53,13 @@ export default function DishList() {
         navigate(-1)
     }
 
+    let bg = bgImage ? bgImage : BG_IMAGE_DEFAULT
+    let showDefaultImage = !Boolean(bgImage)
+
     return (
         <Container>
-            <Background image={'/moroccan-flower.png'} />
-            <h2 className={clsDish.title} style={{color: 'hsl(348, 100%, 61%)'}}>
+            <Background image={bg} isDefault={showDefaultImage} />
+            <h2 className={clsDish.title}>
                 <KeyboardBackspaceOutlinedIcon
                     style={{fontSize: 40}}
                     onClick={back}

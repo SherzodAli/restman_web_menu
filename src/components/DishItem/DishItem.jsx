@@ -1,25 +1,26 @@
-import * as React from 'react'
-import {useState} from 'react'
+import React, {useState} from 'react'
+
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
-import './DishItem.sass'
-import {Swiper, SwiperSlide} from 'swiper/react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import IconButton from '@mui/material/IconButton'
 import Collapse from '@mui/material/Collapse'
 import {styled} from '@mui/material/styles'
-
+import {Swiper, SwiperSlide} from 'swiper/react'
 import SwiperCore, {Navigation, Pagination, Scrollbar} from 'swiper/core'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
+
+import cls from './DishItem.module.sass'
 import {IMAGE_API_URL} from '../../App'
+import {SECONDARY_COLOR} from '../../utils/theme'
 
 SwiperCore.use([Scrollbar, Pagination, Navigation])
 
@@ -58,13 +59,13 @@ export default function DishItem({
     }
 
     return (
-        <Card key={dishId} sx={{minWidth: '80%', maxWidth: '80%', backgroundColor: 'hsl(348, 100%, 61%)'}} style={{marginBottom: 30}}>
+        <Card key={dishId} className={cls.cardWrapper}>
             <Swiper
                 grabCursor
                 pagination={{clickable: true}}
                 navigation={hasMultiplePhoto}
                 loop={hasMultiplePhoto}
-                className='swiperContainer'>
+                className={cls.swiperContainer}>
                 {hasPhoto ? (
                     dishPhotoList.map((image, index) => {
                         let img = image.split('\\')[image.split('\\').length - 1]
@@ -75,7 +76,6 @@ export default function DishItem({
                                     component='img'
                                     height='194'
                                     alt='Картинка'
-                                    // style={{objectFit: 'contain', backgroundColor: '#ECECEC'}}
                                 />
                             </SwiperSlide>
                         )
@@ -93,12 +93,13 @@ export default function DishItem({
             </Swiper>
 
             <CardContent>
-                <Typography gutterBottom variant='h5' component='div' color={'hsl(48, 100%, 67%)'}>
+                <Typography gutterBottom variant='h5' component='div' color={SECONDARY_COLOR}>
                     {dishName}
                 </Typography>
             </CardContent>
-            <CardActions style={{display: 'flex', justifyContent: 'space-between'}}>
-                <Button style={{fontWeight: 'bold', fontSize: 36, color: 'hsl(48, 100%, 67%)'}} size='small'>
+
+            <CardActions className={cls.priceContainer}>
+                <Button className={cls.price} size='small'>
                     {numberWithCommas(dishPrice)}
                 </Button>
                 {dishIngredients && dishDescription && (
@@ -108,19 +109,19 @@ export default function DishItem({
                         aria-expanded={expanded}
                         aria-label='show more'
                     >
-                        <ExpandMoreIcon style={{color: 'hsl(48, 100%, 67%)', fontSize: 38}} />
+                        <ExpandMoreIcon className={cls.expandIcon} />
                     </ExpandMore>
                 )}
             </CardActions>
             <Collapse in={expanded} timeout='auto' unmountOnExit>
                 <CardContent>
-                    <Typography paragraph color={'hsl(48, 100%, 67%)'}>{dishDescription}</Typography>
+                    <Typography paragraph color={SECONDARY_COLOR}>{dishDescription}</Typography>
                     <Typography paragraph>
-                        <span style={{color: 'hsl(48, 100%, 67%)', fontWeight: 'bold'}}>Состав: </span>
+                        <span className={cls.ingredientTitle}>Состав: </span>
                         {dishIngredients?.map((ingredient, idx) => (
-                            <span key={idx} className={'ingredient-simple'}>
+                            <span key={idx} className={cls.ingredient}>
                                 {ingredient}
-                                {dishIngredients.length - 1 === idx ? '' : ', '}
+                                {idx === dishIngredients.length - 1 ? '' : ', '}
                             </span>
                         ))}
                     </Typography>

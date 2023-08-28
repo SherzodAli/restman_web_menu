@@ -7,7 +7,6 @@ import {API_URL} from '../../App'
 import Background from '../Background/Background'
 import BG_IMAGE_DEFAULT from '../../static/bg.png'
 
-
 export default function Menu() {
     const [menuGroups, isLoading] = useLoad({url: `${API_URL}/`}, [])
     const [bgImage, isLoadingBg] = useLoad({url: `${API_URL}/bg`}, {})
@@ -21,11 +20,11 @@ export default function Menu() {
 
     return (
         <Container>
-        <Background image={bg} isDefault={showDefaultImage} />
+            <Background image={bg} isDefault={showDefaultImage} />
             <h1 className={cls.title}>Меню</h1>
             <div className={cls.wrapper}>
                 {menuGroups.map(group => (
-                    <GroupItem dishId={group.ID} dishName={group.Name} />
+                    <GroupItem dishId={group.ID} dishName={group.Name} onClick={() => {}} />
                 ))}
             </div>
         </Container>
